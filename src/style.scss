@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//these are the software title and the chatlog
+#note-app {
+  width: 100%;
+  height: 100%;
+
+  .note-element {
+    display: flex;
+    justify-content: space-between;
+    .read-container {
+      display: flex;
+      flex-direction: column;
+      .date-time-container {
+        margin-left: 10px;
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        font-weight: bold;
+      }
+      .note-message {
+        overflow-wrap: break-word;
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .delete-button {
+      margin: 10px;
+    }
+  }
+}
+//this is the input box implementation
+#input-container {
+  position: fixed;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: grey;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 50%;
+
+  transform: translate(-50%, -50%);
+  #input-title {
+    margin: 10px;
+    background-color: grey;
+    color: white;
+  }
+  #input-box {
+    width: 90%;
+    max-height: calc(100% - 100px);
+    resize: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(182, 182, 182);
+    outline: none;
+  }
+  #submit-input-button {
+    position: absolute;
+
+    text-align: center;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    height: 30px;
+    bottom: 0;
+
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+//this is the add button
+#add-button {
+  bottom: 20px;
+  right: 20px;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(125, 201, 176);
+  border-radius: 50%;
+  #cross-container {
+    top: calc(50% - 2px);
+    left: calc(50% - 2px);
+    position: absolute;
+    #stroke1 {
+      position: absolute;
+      transform: translate(calc(-50% + 2px), 0);
+      width: 20px;
+      height: 4px;
+      border-radius: 10px;
+      background-color: white;
+    }
+    #stroke2 {
+      position: absolute;
+      transform: translate(0, calc(-50% + 2px));
+      width: 4px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: white;
+    }
+  }
+}
